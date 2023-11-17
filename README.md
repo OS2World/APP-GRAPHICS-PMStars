@@ -1,19 +1,20 @@
 APP-GRAPHICS-PMStars
 ====================
-
 PMStars will display the starfield with either a single 'dot' or line for each star.
 
+![PMStars ScreenShot](/wiki/PMStars_001.png)
 
 LICENSE
 ===============
-* Public Domain
+* BSD 3-Clause License
 
 COMPILE TOOLS
 ===============
-* WATCOM 10.6
+* yum install git gcc make libc-devel binutils watcom-wrc watcom-wlink-hll
 
 AUTHORS
 ===============
+* Martin Iturbide (2023)
 * Don Moore
 
 LINKS
