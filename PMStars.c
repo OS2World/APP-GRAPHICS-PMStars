@@ -57,9 +57,7 @@ MRESULT EXPENTRY ClientWndProc(HWND hwnd, USHORT msg, MPARAM mp1, MPARAM mp2) {
                                                      0 is an even index.
                                                      value is either (+1) or (-1)
                                */
-  static ULONG my_timer;  /* System (PM) number indicating unique (system) timer number
-                             for this app
-                          */
+	static ULONG my_timer;  /* System (PM) number indicating unique (system) timer number for this app   */
 #ifdef DEBUG
   static LONG my_marker;  /* Marker type (defined by PM) */
 #endif
