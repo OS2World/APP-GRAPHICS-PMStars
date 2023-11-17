@@ -4,7 +4,7 @@ HAB hab;
 int track=0;  /* Star will 'track' */
 LONG back_clr=CLR_BLACK;  /* (client) Window background color */
 
-void main(int argc, char *argv[]) {
+int main(int argc, char *argv[]) {
   HMQ hmq;
   QMSG qmsg;
   HWND hwndFrame, hwndDrawing;
@@ -15,10 +15,10 @@ void main(int argc, char *argv[]) {
 /* Standard PM window creation stuff */
   hab=WinInitialize( 0 );
   hmq=WinCreateMsgQueue( hab, 0 );
-  WinRegisterClass( hab, szClientClass, (PFNWP)ClientWndProc,
+  WinRegisterClass( hab, (PCSZ) szClientClass, (PFNWP)ClientWndProc,
            CS_SIZEREDRAW, (ULONG)0 );
   hwndFrame=WinCreateStdWindow( HWND_DESKTOP, WS_VISIBLE,
-                 &flFrameFlags, szClientClass, szClientClass,
+                 &flFrameFlags, (PCSZ) szClientClass, (PCSZ) szClientClass,
                  0L, NULLHANDLE, 0L, &hwndDrawing );
 /* Check that window was created then set window location on the screen and display */
   if ( hwndFrame != NULLHANDLE )
@@ -33,7 +33,7 @@ void main(int argc, char *argv[]) {
   WinDestroyWindow( hwndFrame );
   WinDestroyMsgQueue( hmq );
   WinTerminate( hab );
-  return;
+  return 0;
 }
 
 MRESULT EXPENTRY ClientWndProc(HWND hwnd, USHORT msg, MPARAM mp1, MPARAM mp2) {
