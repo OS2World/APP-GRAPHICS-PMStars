@@ -282,6 +282,8 @@ MRESULT EXPENTRY ClientWndProc(HWND hwnd, USHORT msg, MPARAM mp1, MPARAM mp2) {
                                                    so process normally
                                                 */
   }  /* endswitch msg */
+  if ( my_timer ) {;}   /* stop gcc compiler from warning complaining */
   return MRFROMSHORT( FALSE );
+	
 }
 
